@@ -1,0 +1,142 @@
+/* Apply flexbox to center the login section */
+body, html {
+   
+    
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #262429, #2575fc); /* Optional: Set the background gradient */
+}
+
+/* Centered Login Section */
+.login {
+    background: linear-gradient(to right, #262429, #2575fc);
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* Centering the login container */
+.container {
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Heading Styles */
+h1 {
+    color: #fff;
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: #ddd;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+/* Styling for form elements */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Labels */
+label {
+    text-align: left;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+/* Input Fields */
+input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+input::placeholder {
+    color: #ddd;
+}
+
+/* Input Hover & Focus Effect */
+input:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+input:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.4);
+    box-shadow: 0px 0px 8px rgba(255, 255, 255, 0.4);
+}
+
+/* Login Button */
+button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(90deg, #ff416c, #ff4b2b);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin-top: 10px;
+}
+
+/* Button Hover Effect */
+button:hover {
+    background: linear-gradient(90deg, #ff4b2b, #ff416c);
+    transform: scale(1.05);
+    box-shadow: 0px 5px 15px rgba(255, 75, 43, 0.4);
+}
+
+/* Signup Link */
+span {
+    display: block;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #ddd;
+}
+
+span a {
+    color: #ff4b2b;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+span a:hover {
+    color: #ff416c;
+    text-decoration: underline;
+}

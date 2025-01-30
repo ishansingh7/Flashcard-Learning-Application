@@ -1,0 +1,107 @@
+/* Main title */
+.main-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background: -webkit-linear-gradient(45deg, #ff416c, #ff4b2b);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+  }
+  
+  /* Section titles */
+  .section-title {
+    font-size: 1.8rem;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-bottom: 3px solid #ff4b2b;
+    display: inline-block;
+    padding-bottom: 5px;
+    text-align: center;
+    width: 100%;
+  }
+  
+  /* Grid layout - Adjusted to fill available space */
+  .flashcards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  /* Flashcard styling */
+  .flashcard {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+    position: relative;
+    max-width: 300px; /* Prevents cards from getting too large */
+    margin: auto; /* Ensures proper alignment */
+  }
+  
+  /* Hover effect */
+  .flashcard:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(255, 75, 43, 0.5);
+  }
+  
+  /* Flashcard header */
+  .flashcard-header {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: white;
+    background: #ff4b2b;
+    padding: 10px;
+    border-radius: 8px 8px 0 0;
+    text-align: center;
+  }
+  
+  /* Flashcard content */
+  .flashcard-content {
+    padding: 15px;
+    font-size: 1rem;
+    color: #333;
+  }
+  
+  /* Author name */
+  .author-name {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #555;
+  }
+  
+  /* Read more button */
+  .read-more {
+    background: #ff4b2b;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s;
+  }
+  
+  /* Button hover effect */
+  .read-more:hover {
+    background: #ff416c;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .flashcards-grid {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+    .main-title {
+      font-size: 2rem;
+    }
+  }
+  

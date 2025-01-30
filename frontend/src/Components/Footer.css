@@ -1,0 +1,28 @@
+/* Ensure the body and html take the full height */
+html, body {
+ 
+
+  
+    
+    flex-direction: column;
+}
+
+/* The main wrapper should take up all available space */
+#root, .app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Full height of the viewport */
+}
+
+/* Push the footer to the bottom */
+.main-content {
+    flex: 1; /* Expands to fill remaining space */
+}
+
+.footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    width: 100%;
+}
