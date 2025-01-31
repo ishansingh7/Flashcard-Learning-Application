@@ -1,18 +1,25 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import { useState } from 'react';
-import RefreshHandler from './welcome Pages/RefreshHandler';
-import Navbar from './Components/Navbar';
-import Welcome from './Components/Welcome';
-import Home from './pages/Home';
-import About from './Components/About';
-import Login from './pages/Login';
-import Contact from './Components/Contact';
-import Signup from './pages/Signup';
-import Footer from './Components/Footer';
-
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { useState, useEffect } from "react";
+import RefreshHandler from "./welcome Pages/RefreshHandler";
+import Navbar from "./Components/Navbar";
+import Welcome from "./Components/Welcome";
+import Home from "./pages/Home";
+import About from "./Components/About";
+import Login from "./pages/Login";
+import Contact from "./Components/Contact";
+import Signup from "./pages/Signup";
+import Footer from "./Components/Footer";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  // Check authentication status on app load
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      setIsAuthenticated(true);
+    }
+  }, []);
 
   // PrivateRoute component to protect routes that require authentication
   const PrivateRoute = ({ children }) => {
@@ -26,7 +33,6 @@ function App() {
       <Routes>
         {/* Public Routes */}
         <Route path="/" element={<Welcome />} />
-       
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/login" element={<Login setIsAuthenticated={setIsAuthenticated} />} />

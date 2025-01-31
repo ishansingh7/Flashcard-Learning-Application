@@ -6,17 +6,15 @@ const flashcardSchema = new mongoose.Schema(
   {
     title: { type: String, required: true, trim: true },
     author: { type: String, required: true, trim: true },
-    description: { type: String, required: true, trim: true },
+    description: { type: String, required: true, trim: true }
   },
   { timestamps: true }
 );
 
 const Flashcard = mongoose.model("Flashcard", flashcardSchema);
 
-// Middleware for parsing JSON
-router.use(express.json());
 
-// Create a flashcard
+
 router.post("/flashcards", async (req, res) => {
   try {
     const { title, author, description } = req.body;
@@ -35,7 +33,7 @@ router.post("/flashcards", async (req, res) => {
   }
 });
 
-// Fetch all flashcards
+// ✅ Fetch all flashcards
 router.get("/flashcards", async (req, res) => {
   try {
     const flashcards = await Flashcard.find();

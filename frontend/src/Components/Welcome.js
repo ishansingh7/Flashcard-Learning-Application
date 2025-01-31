@@ -5,6 +5,7 @@ import "./Welcome.css"; // Import CSS file
 function Welcome() {
   const [flashcards, setFlashcards] = useState([]);
   const [expandedCard, setExpandedCard] = useState(null);
+  const [searchTerm, setSearchTerm] = useState(""); // Search term state
 
   useEffect(() => {
     const fetchFlashcards = async () => {
@@ -22,17 +23,31 @@ function Welcome() {
     setExpandedCard(expandedCard === id ? null : id);
   };
 
+  // Filter flashcards based on search term
+  const filteredFlashcards = flashcards.filter((flashcard) =>
+    flashcard.author.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
-    <div >
+    <div>
       <h1 className="main-title">Flashcard Information</h1>
+
+      {/* Search Bar */}
+      <input
+        type="text"
+        placeholder="Search by author..."
+        className="search-bar"
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
 
       {/* Latest Flashcards Section */}
       <h2 className="section-title">Latest Added Flashcards</h2>
       <div className="flashcards-grid">
-        {flashcards.length === 0 ? (
+        {filteredFlashcards.length === 0 ? (
           <p className="no-data">No flashcards available</p>
         ) : (
-          flashcards.slice(0, 3).map((flashcard) => ( // Show only the latest 3
+          filteredFlashcards.slice(0, 3).map((flashcard) => (
             <div key={flashcard._id} className="flashcard">
               <div className="flashcard-header">{flashcard.title}</div>
               <div className="flashcard-content">
@@ -54,8 +69,8 @@ function Welcome() {
       {/* All Flashcards Section */}
       <h2 className="section-title">All Flashcards</h2>
       <div className="flashcards-grid">
-        {flashcards.length > 3 &&
-          flashcards.slice(3).map((flashcard) => (
+        {filteredFlashcards.length > 3 &&
+          filteredFlashcards.slice(3).map((flashcard) => (
             <div key={flashcard._id} className="flashcard">
               <div className="flashcard-header">{flashcard.title}</div>
               <div className="flashcard-content">

@@ -49,9 +49,8 @@ function Login() {
         localStorage.setItem("token", jwtToken);
         localStorage.setItem("loggedInUser", name);
 
-        setTimeout(() => {
-          navigate("/home");
-        }, 1000);
+        // **Navigate to Home immediately after login**
+        navigate("/home");
       } else {
         const errorMessage =
           error?.details?.[0]?.message || message || "An error occurred";
