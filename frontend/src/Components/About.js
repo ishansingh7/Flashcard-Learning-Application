@@ -21,13 +21,13 @@ const About = () => {
       
       <h2>Follow Us</h2>
       <div className="social-links">
-        <a href="https://twitter.com/johndoe" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.linkedin.com/in/ishan-singh-61a0701b2/" target="_blank" rel="noopener noreferrer">
           <FaTwitter className="social-icon" /> Twitter
         </a>
-        <a href="https://github.com/johndoe" target="_blank" rel="noopener noreferrer">
+        <a href="https://github.com/ishansingh7" target="_blank" rel="noopener noreferrer">
           <FaGithub className="social-icon" /> GitHub
         </a>
-        <a href="https://linkedin.com/in/johndoe" target="_blank" rel="noopener noreferrer">
+        <a href="https://x.com/ishansingh2015" target="_blank" rel="noopener noreferrer">
           <FaLinkedin className="social-icon" /> LinkedIn
         </a>
       </div>
